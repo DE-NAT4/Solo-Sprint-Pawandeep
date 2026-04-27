@@ -19,10 +19,11 @@ while app_is_running == True:
 
 
     if navigation_input == 1:
-        pass
+        new_user = input("What is the new user's name:  ")
+        active_users.append(new_user)
 
-    # ELIF 2: LIST ACCOUNTS
-        # USER INPUT: VIEW ACTIVE OR DISABLED ACCOUNTS
+    elif navigation_input == 2:
+        print_accounts(active_users, disabled_users)
 
     # ELIF 3: ENABLE/DISABLE USER
         # USER INPUT: ENABLE OR DISABLE
@@ -31,5 +32,7 @@ while app_is_running == True:
 
     if navigation_input == 0:
         app_is_running = 'False'
+
+
     
 

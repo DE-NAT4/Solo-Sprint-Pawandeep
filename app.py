@@ -32,6 +32,6 @@ while app_is_running == True:
     if navigation_input == 0:
         app_is_running = 'False'
 
-
+save_data(active_users, disabled_users)
     
 

@@ -1,0 +1,26 @@
+#           FUNCTIONS 
+# =============================================
+
+
+# DEF ADD NEW USER ACCOUNT TO ENABLED LIST
+
+
+# DEF DISABLE A USER ACCOUNT - REMOVE FROM ENABLED LIST AND ADD TO DISABLED
+
+
+# DEF ENABLE A USER ACCOUNT - REMOVE FROM DISABLED LIST AND ADD TO ENABLED
+
+
+# DEF PRINT USER ACCOUNT NAMES
+
+
+# DEF ADD ALL ACCOUNT TYPES TO USERS.CSV
+#         DATA STRUCTURE:
+#               - ENABLED, USER_NAME
+#               - ENABLED, USER_NAME
+#               - ENABLED, USER_NAME
+#               - DISABLED, USER_NAME
+#               - DISABLED, USER_NAME
+#               - ETC
+
+

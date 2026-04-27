@@ -22,6 +22,18 @@ def create_disabled_user_list():
                 result.append(row[1])
     return result
 
+
+def navigation_menu():
+    print('''
+        USER MANAGEMENT SYSTEM'
+           - Main Menu -'
+          
+    > 1: Add User
+    > 2: View Active/Disabled Accounts
+    > 3: Enable/Disable an Account
+    > 0: Exit 
+          ''')
+
 # DEF ADD NEW USER ACCOUNT TO ENABLED LIST
 
 

@@ -35,22 +35,27 @@ def navigation_menu():
           ''')
 
 
-# DEF ADD NEW USER ACCOUNT TO ENABLED LIST
-
-
 def account_status_change(active_users, disabled_users):
+    print('''
+        USER MANAGEMENT SYSTEM'
+      - Change Account Statuses -' 
+          ''')
     attempting = True
     while attempting == True:
         print("To DISABLE an account, please enter 0")
         option = int(input("To ENABLE an account, please enter 1: \n"))
         if option == 0:
             print_account(active_users, 'Active')
-            target = int(input("Please enter the index of the account to DISABLE:  "))
+            target = int(input("\nPlease enter the index of the account to DISABLE:  "))
             try:
                 name = active_users.pop(target)
                 disabled_users.append(name)
                 attempting = False
             except:
+                print('''
+        USER MANAGEMENT SYSTEM'
+             - ERROR -' 
+          ''')
                 print("Invalid entry, please try again.")
             
         elif option == 1:
@@ -61,8 +66,16 @@ def account_status_change(active_users, disabled_users):
                 active_users.append(name)
                 attempting = False
             except:
+                print('''
+        USER MANAGEMENT SYSTEM'
+             - ERROR -' 
+          ''')
                 print("Invalid entry, please try again.")
         else:
+            print('''
+        USER MANAGEMENT SYSTEM'
+             - ERROR -' 
+          ''')
             print("Invalid entry, please try again.")
 
 
@@ -74,11 +87,11 @@ def print_accounts(activelist, disabledlist):
           ''')
     print(f'Active Accounts:')
     for i in range(len(activelist)):
-        print(f'{i}> {activelist[i]}')
+        print(f'{i} > {activelist[i]}')
 
     print(f'\nDisabled Accounts:')
     for i in range(len(disabledlist)):
-        print(f'{i}> {disabledlist[i]}')
+        print(f'{i} > {disabledlist[i]}')
 
 def print_account(list, status):
     print('''
@@ -87,7 +100,7 @@ def print_account(list, status):
           ''')
     print(f'{status} Accounts:')
     for i in range(len(list)):
-        print(f'{i}> {list[i]}')
+        print(f'{i} > {list[i]}')
 
 # DEF ADD ALL ACCOUNT TYPES TO USERS.CSV
 #         DATA STRUCTURE:

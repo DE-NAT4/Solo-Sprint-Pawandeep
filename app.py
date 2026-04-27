@@ -25,10 +25,9 @@ while app_is_running == True:
     elif navigation_input == 2:
         print_accounts(active_users, disabled_users)
 
-    # ELIF 3: ENABLE/DISABLE USER
-        # USER INPUT: ENABLE OR DISABLE
-        # VIEW ACCOUNTS
-        # USER INPUTS: SELECT ACCOUNT
+    elif navigation_input == 3:
+        account_status_change(active_users, disabled_users)
+        print_accounts(active_users, disabled_users)
 
     if navigation_input == 0:
         app_is_running = 'False'

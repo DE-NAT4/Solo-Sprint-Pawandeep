@@ -48,6 +48,7 @@ def account_status_change(active_users, disabled_users):
             target = int(input("\nPlease enter the index of the account to DISABLE:  "))
             try:
                 name = active_users.pop(target)
+                name['status'] = 'Disabled'
                 disabled_users.append(name)
                 attempting = False
             except:
@@ -62,6 +63,8 @@ def account_status_change(active_users, disabled_users):
             target = int(input("Please enter the index of the account to ENABLE:  "))
             try:
                 name = disabled_users.pop(target)
+                
+                name['status'] = 'Active'
                 active_users.append(name)
                 attempting = False
             except:
@@ -104,9 +107,9 @@ def print_account(list, status):
 def save_data(active_users, disabled_users):
     data = [['status', 'name', 'password']]
     for name in active_users:
-        data.append([name])
+        data.append([name['status'], name['name'], name['password']])
     for name in disabled_users:
-        data.append([name])
+        data.append([name['status'], name['name'], name['password']])
     
     with open('users.csv', mode='w', newline='') as file:
         writer = csv.writer(file)

@@ -1,3 +1,4 @@
 status,name,password
-"{'status': 'Active', 'name': 'efrege', 'password': '123'}"
-"{'status': 'Active', 'name': 'sgrerge', 'password': '123'}"
+Active,eref,123
+Active,0,123
+Disabled,sgrrt,123

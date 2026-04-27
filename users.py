@@ -102,13 +102,15 @@ def print_account(list, status):
     for i in range(len(list)):
         print(f'{i} > {list[i]}')
 
-# DEF ADD ALL ACCOUNT TYPES TO USERS.CSV
-#         DATA STRUCTURE:
-#               - ENABLED, USER_NAME
-#               - ENABLED, USER_NAME
-#               - ENABLED, USER_NAME
-#               - DISABLED, USER_NAME
-#               - DISABLED, USER_NAME
-#               - ETC
+def save_data(active_users, disabled_users):
+    data = [['status', 'name']]
+    for name in active_users:
+        data.append(['Active', name])
+    for name in disabled_users:
+        data.append(['Disabled', name])
+    
+    with open('users.csv', mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(data)
 
 

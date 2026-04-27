@@ -13,7 +13,14 @@ def create_active_user_list():
     return result
 
 # DEF CREATE DISABLED USERS LIST
-
+def create_disabled_user_list():
+    result = []
+    with open('users.csv', mode='r', newline='') as data:
+        reader = csv.reader(data)
+        for row in reader:
+            if row[0] == 'Disabled':
+                result.append(row[1])
+    return result
 
 # DEF ADD NEW USER ACCOUNT TO ENABLED LIST
 

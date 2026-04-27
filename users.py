@@ -30,6 +30,7 @@ def navigation_menu():
     > 1: Add User
     > 2: View Active/Disabled Accounts
     > 3: Enable/Disable an Account
+    > 4: Test login for active Account
     > 0: Exit 
           ''')
 
@@ -115,4 +116,12 @@ def save_data(active_users, disabled_users):
         writer = csv.writer(file)
         writer.writerows(data)
 
-
+def test_login(active_users):
+    name = input("Enter username: ")
+    password = input("Ener password: ")
+    for account in active_users:
+        if name == account['name']:
+            if password == account['password']: 
+                print("Access granted")
+                return
+    print("Login failed.")

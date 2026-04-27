@@ -6,6 +6,7 @@ from users import *
 
 active_users = create_active_user_list()
 disabled_users = create_disabled_user_list()
+print(active_users)
 
 
 # =========================================================
@@ -20,7 +21,8 @@ while app_is_running == True:
 
     if navigation_input == 1:
         new_user = input("What is the new user's name:  ")
-        active_users.append(new_user)
+        user = {'status': 'Active', 'name': new_user, 'password': '123'}
+        active_users.append(user)
 
     elif navigation_input == 2:
         print_accounts(active_users, disabled_users)

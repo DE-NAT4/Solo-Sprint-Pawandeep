@@ -2,24 +2,23 @@
 # =========================================================
 import csv
 
-# DEF CREATE ACTIVE USERS LIST
 def create_active_user_list():
     result = []
     with open('users.csv', mode='r', newline='') as data:
-        reader = csv.reader(data)
+        reader = csv.DictReader(data)  
         for row in reader:
-            if row[0] == 'Active':
-                result.append(row[1])
+            if row['status'] == 'Active':  
+                result.append(row) 
     return result
 
-# DEF CREATE DISABLED USERS LIST
+
 def create_disabled_user_list():
     result = []
     with open('users.csv', mode='r', newline='') as data:
-        reader = csv.reader(data)
+        reader = csv.DictReader(data)  
         for row in reader:
-            if row[0] == 'Disabled':
-                result.append(row[1])
+            if row['status'] == 'Disabled': 
+                result.append(row) 
     return result
 
 
@@ -103,11 +102,11 @@ def print_account(list, status):
         print(f'{i} > {list[i]}')
 
 def save_data(active_users, disabled_users):
-    data = [['status', 'name']]
+    data = [['status', 'name', 'password']]
     for name in active_users:
-        data.append(['Active', name])
+        data.append([name])
     for name in disabled_users:
-        data.append(['Disabled', name])
+        data.append([name])
     
     with open('users.csv', mode='w', newline='') as file:
         writer = csv.writer(file)

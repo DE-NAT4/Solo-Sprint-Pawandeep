@@ -21,7 +21,8 @@ while app_is_running == True:
 
     if navigation_input == 1:
         new_user = input("What is the new user's name:  ")
-        user = {'status': 'Active', 'name': new_user, 'password': '123'}
+        password = input("Enter a password: ")
+        user = {'status': 'Active', 'name': new_user, 'password': password}
         active_users.append(user)
 
     elif navigation_input == 2:

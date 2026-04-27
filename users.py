@@ -44,13 +44,17 @@ def navigation_menu():
 
 
 # DEF PRINT USER ACCOUNT NAMES
-def print_accounts(list, status):
+def print_accounts(activelist, disabledlist):
     print('''
         USER MANAGEMENT SYSTEM'
            - VIEW ACCOUNTS -'
           ''')
-    print(f'{status} Account:')
-    for name in list:
+    print(f'Active Accounts:')
+    for name in activelist:
+        print(f' > {name}')
+
+    print(f'\nDisabled Accounts:')
+    for name in disabledlist:
         print(f' > {name}')
 
 # DEF ADD ALL ACCOUNT TYPES TO USERS.CSV

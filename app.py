@@ -6,8 +6,6 @@ from users import *
 
 active_users = create_active_user_list()
 disabled_users = create_disabled_user_list()
-print(active_users)
-
 
 # =========================================================
 

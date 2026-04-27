@@ -1,5 +1,18 @@
-#           FUNCTIONS 
-# =============================================
+#                      FUNCTIONS 
+# =========================================================
+import csv
+
+# DEF CREATE ACTIVE USERS LIST
+def create_active_user_list():
+    result = []
+    with open('users.csv', mode='r', newline='') as data:
+        reader = csv.reader(data)
+        for row in reader:
+            if row[0] == 'Active':
+                result.append(row[1])
+    return result
+
+# DEF CREATE DISABLED USERS LIST
 
 
 # DEF ADD NEW USER ACCOUNT TO ENABLED LIST
@@ -12,7 +25,14 @@
 
 
 # DEF PRINT USER ACCOUNT NAMES
-
+def print_accounts(list, status):
+    print('''
+        USER MANAGEMENT SYSTEM'
+           - VIEW ACCOUNTS -'
+          ''')
+    print(f'{status} Account:')
+    for name in list:
+        print(f' > {name}')
 
 # DEF ADD ALL ACCOUNT TYPES TO USERS.CSV
 #         DATA STRUCTURE:

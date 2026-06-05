@@ -22,5 +22,5 @@ jobs:
 
       - name: Count lines of code
         run: |
-          pygount --format=summary --output=line_count.txt .
+          pygount --format=summary . > line_count.txt .
           cat line_count.txt

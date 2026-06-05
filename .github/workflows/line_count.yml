@@ -1,0 +1,26 @@
+name: Line Count Workflow
+
+on:
+  push:
+    branches:
+      - main  # Only trigger when pushed to the 'main' branch
+
+jobs:
+  count-lines:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"  # Use your preferred Python version
+
+      - name: Install pygount
+        run: pip install pygount
+
+      - name: Count lines of code
+        run: |
+          pygount --format=summary --output=line_count.txt .
+          cat line_count.txt

@@ -1,6 +1,7 @@
 # Solo-Sprint-Pawandeep
 Solo sprint project to create a user account management system at the terminal.
-No with github actions integration!
+Now with github actions integration!
+(With push triggers on main only)
 
 ## Planning
 ### app.py
